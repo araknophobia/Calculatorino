@@ -7,8 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.rofflamo.akshay.calculatorino.MainActivity"
-    android:id="@+id/RL1">
+    tools:context="com.rofflamo.akshay.calculatorino.MainActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -23,22 +22,13 @@
             android:textAlignment="textEnd"
             android:layout_weight="25"
             android:textSize="70sp"
-            android:text="0"
-            android:gravity="end" />
+            android:gravity="end"
+            android:text="0.0" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/RL2"
             android:layout_weight="75">
-
-
-            wrap_content
-            New Button
-            @+id/button2
-            true
-            true
-            true
 
             <LinearLayout
                 android:orientation="vertical"
