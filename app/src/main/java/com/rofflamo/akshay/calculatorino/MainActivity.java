@@ -1,6 +1,5 @@
 package com.rofflamo.akshay.calculatorino;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,13 +8,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.String;
-import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
     String lastop = null;
-    CharSequence zero="0";
-    Double result = Double.valueOf(0);
+    Double result = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +28,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastop=="=") {
-                    tv.setText("0");
-                    result=Double.valueOf(0);
+                    tv.setText("0.0");
+                    result=0.0;
                     lastop = null;
                 }
-                if(tv.getText()=="0")
+                if(Double.parseDouble(tv.getText().toString())==0.0) {
                     tv.setText("");
+                }
 
                 tv.append("0");
             }
@@ -48,13 +46,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(lastop=="=") {
                     tv.setText("0");
-                    result=Double.valueOf(0);
-                    lastop = null;setText("0");
-                    result=Double.valueOf(0);
+                    result=0.0;
                     lastop = null;
                 }
-                if(Integer.valueOf(tv.toString())==0)
+                if(Double.parseDouble(tv.getText().toString())==0.0) {
                     tv.setText("");
+                }
 
                 tv.append("1");
             }
@@ -66,11 +63,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(lastop=="=") {
                     tv.setText("0");
-                    result=Double.valueOf(0);
+                    result=0.0;
                     lastop = null;
                 }
-                if(tv.getText()=="0")
+                if(Double.parseDouble(tv.getText().toString())==0.0) {
                     tv.setText("");
+                }
 
                 tv.append("2");
             }
@@ -82,11 +80,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(lastop=="=") {
                     tv.setText("0");
-                    result=Double.valueOf(0);
+                    result=0.0;
                     lastop = null;
                 }
-                if(tv.getText()=="0")
+                if(Double.parseDouble(tv.getText().toString())==0.0) {
                     tv.setText("");
+                }
 
                 tv.append("3");
             }
@@ -98,11 +97,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(lastop=="=") {
                     tv.setText("0");
-                    result=Double.valueOf(0);
+                    result=0.0;
                     lastop = null;
                 }
-                if(tv.getText()=="0")
+                if(Double.parseDouble(tv.getText().toString())==0.0) {
                     tv.setText("");
+                }
 
                 tv.append("4");
             }
@@ -114,11 +114,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(lastop=="=") {
                     tv.setText("0");
-                    result=Double.valueOf(0);
+                    result=0.0;
                     lastop = null;
                 }
-                if(tv.getText()=="0")
+                if(Double.parseDouble(tv.getText().toString())==0.0) {
                     tv.setText("");
+                }
 
                 tv.append("5");
             }
@@ -130,13 +131,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(lastop=="=") {
                     tv.setText("0");
-                    result=Double.valueOf(0);
+                    result=0.0;
                     lastop = null;
                 }
-                if(tv.getText()=="0")
+                if(Double.parseDouble(tv.getText().toString())==0.0) {
                     tv.setText("");
+                }
 
                 tv.append("6");
+
+
             }
         });
 
@@ -146,13 +150,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(lastop=="=") {
                     tv.setText("0");
-                    result=Double.valueOf(0);
+                    result=0.0;
                     lastop = null;
                 }
-                if(tv.getText()=="0")
+                if(Double.parseDouble(tv.getText().toString())==0.0) {
                     tv.setText("");
+                }
 
                 tv.append("7");
+
             }
         });
 
@@ -162,13 +168,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(lastop=="=") {
                     tv.setText("0");
-                    result=Double.valueOf(0);
+                    result=0.0;
                     lastop = null;
                 }
-                if(tv.getText()=="0")
+                if(Double.parseDouble(tv.getText().toString())==0.0) {
                     tv.setText("");
+                }
 
                 tv.append("8");
+
             }
         });
 
@@ -178,13 +186,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(lastop=="=") {
                     tv.setText("0");
-                    result=Double.valueOf(0);
+                    result=0.0;
                     lastop = null;
                 }
-                if(tv.getText()=="0")
+                if(Double.parseDouble(tv.getText().toString())==0.0) {
                     tv.setText("");
+                }
 
                 tv.append("9");
+
             }
         });
 
@@ -192,8 +202,8 @@ public class MainActivity extends AppCompatActivity {
         buttonclr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tv.setText(zero);
-                result=Double.valueOf(0);
+                tv.setText("0.0");
+                result=0.0;
                 lastop=null;
             }
         });
@@ -202,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
         buttonplus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tv.getText()!="0") {
+                if(tv.getText()!="0.0") {
                     if (lastop == null || lastop == "+") {
                         result = result + Double.parseDouble(tv.getText().toString());
                         lastop = "+";
@@ -225,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
                         lastop="+";
                     }
                 }
-                tv.setText("0");
+                tv.setText("0.0");
 
             }
         });
@@ -234,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
         buttonminus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tv.getText()!=zero) {
+                if(tv.getText()!="0.0") {
                     Toast t2 = Toast.makeText(getApplicationContext(), "Minus", Toast.LENGTH_SHORT);
                     t2.show();
                     if (lastop == null || lastop == "+") {
@@ -259,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
                         lastop="-";
                     }
                 }
-                tv.setText("0");
+                tv.setText("0.0");
 
             }
         });
@@ -268,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
         buttonmul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tv.getText()!="0") {
+                if(tv.getText()!="0.0") {
                     if (lastop == null || lastop == "+") {
                         result = result + Double.parseDouble(tv.getText().toString());
                         lastop = "*";
@@ -291,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
                         lastop="*";
                     }
                 }
-                tv.setText("0");
+                tv.setText("0.0");
 
             }
         });
@@ -300,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
         buttondiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tv.getText()!="0") {
+                if(tv.getText()!="0.0") {
                     if (lastop == null || lastop == "+") {
                         result = result + Double.parseDouble(tv.getText().toString());
                         lastop = "/";
@@ -323,7 +333,7 @@ public class MainActivity extends AppCompatActivity {
                         lastop="/";
                     }
                 }
-                tv.setText("0");
+                tv.setText("0.0");
 
             }
         });
@@ -333,8 +343,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 if(lastop=="=") {
-                    tv.setText("0");
-                    result=Double.valueOf(0);
+                    tv.setText("0.0");
+                    result=0.0;
                     lastop = null;
                 }
                 String s = new String(tv.getText().toString());
