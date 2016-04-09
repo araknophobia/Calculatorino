@@ -12,6 +12,7 @@ import java.lang.String;
 public class MainActivity extends AppCompatActivity {
 
     String lastop = null;
+    String lastpress=null;
     Double result = 0.0;
 
     @Override
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tv.append("0");
+                lastpress="num";
             }
         });
 
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tv.append("1");
+                lastpress="num";
             }
         });
 
@@ -71,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tv.append("2");
+                lastpress="num";
             }
         });
 
@@ -88,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tv.append("3");
+                lastpress="num";
             }
         });
 
@@ -105,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tv.append("4");
+                lastpress="num";
             }
         });
 
@@ -122,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tv.append("5");
+                lastpress="num";
             }
         });
 
@@ -139,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tv.append("6");
+                lastpress="num";
 
 
             }
@@ -158,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tv.append("7");
+                lastpress="num";
 
             }
         });
@@ -176,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tv.append("8");
+                lastpress="num";
 
             }
         });
@@ -194,6 +204,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tv.append("9");
+                lastpress="num";
 
             }
         });
@@ -205,6 +216,7 @@ public class MainActivity extends AppCompatActivity {
                 tv.setText("0.0");
                 result=0.0;
                 lastop=null;
+                lastpress="num";
             }
         });
 
@@ -212,7 +224,8 @@ public class MainActivity extends AppCompatActivity {
         buttonplus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tv.getText()!="0.0") {
+
+                if(lastpress=="num") {
                     if (lastop == null || lastop == "+") {
                         result = result + Double.parseDouble(tv.getText().toString());
                         lastop = "+";
@@ -230,12 +243,16 @@ public class MainActivity extends AppCompatActivity {
                             lastop = "+";
                         }
 
-                    } else{
+                    } else {
                         tv.setText("");
-                        lastop="+";
+                        lastop = "+";
                     }
                 }
+                else
+                    lastop="+";
+
                 tv.setText("0.0");
+                lastpress="op";
 
             }
         });
@@ -244,7 +261,9 @@ public class MainActivity extends AppCompatActivity {
         buttonminus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tv.getText()!="0.0") {
+
+                if(lastpress=="num") {
+
                     Toast t2 = Toast.makeText(getApplicationContext(), "Minus", Toast.LENGTH_SHORT);
                     t2.show();
                     if (lastop == null || lastop == "+") {
@@ -264,21 +283,27 @@ public class MainActivity extends AppCompatActivity {
                             lastop = "-";
                         }
 
-                    } else{
-                        tv.setText("");
-                        lastop="-";
+                    } else {
+                        tv.setText("0.0");
+                        lastop = "-";
+
                     }
                 }
+                else
+                    lastop="-";
+
                 tv.setText("0.0");
+                lastpress="op";
+
+
 
             }
         });
-
         final Button buttonmul = (Button)findViewById(R.id.buttonmul);
         buttonmul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tv.getText()!="0.0") {
+                if(lastpress=="num") {
                     if (lastop == null || lastop == "+") {
                         result = result + Double.parseDouble(tv.getText().toString());
                         lastop = "*";
@@ -301,7 +326,10 @@ public class MainActivity extends AppCompatActivity {
                         lastop="*";
                     }
                 }
+                else
+                    lastop="*";
                 tv.setText("0.0");
+                lastpress="op";
 
             }
         });
@@ -310,7 +338,7 @@ public class MainActivity extends AppCompatActivity {
         buttondiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tv.getText()!="0.0") {
+                if(lastpress=="num") {
                     if (lastop == null || lastop == "+") {
                         result = result + Double.parseDouble(tv.getText().toString());
                         lastop = "/";
@@ -333,7 +361,10 @@ public class MainActivity extends AppCompatActivity {
                         lastop="/";
                     }
                 }
+                else
+                    lastop="/";
                 tv.setText("0.0");
+                lastpress="op";
 
             }
         });
@@ -352,6 +383,7 @@ public class MainActivity extends AppCompatActivity {
                 if(!s.contains(c)){
                     tv.append(".");
                 }
+                lastpress="num";
             }
         });
 
@@ -359,7 +391,7 @@ public class MainActivity extends AppCompatActivity {
         buttoneq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tv.getText()!="") {
+                if(lastpress=="num") {
                     if (lastop == null || lastop == "+") {
                         result = result + Double.parseDouble(tv.getText().toString());
                         lastop = "=";
@@ -380,6 +412,8 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }
+                else
+                    lastop="=";
                 tv.setText(result.toString());
             }
         });
