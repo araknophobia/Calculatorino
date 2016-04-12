@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(Double.parseDouble(tv.getText().toString())==0.0) {
+                if(tv.getText().toString().equals("0.0")) {
                     tv.setText("");
                 }
 
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(Double.parseDouble(tv.getText().toString())==0.0) {
+                if(tv.getText().toString().equals("0.0")) {
                     tv.setText("");
                 }
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(Double.parseDouble(tv.getText().toString())==0.0) {
+                if(tv.getText().toString().equals("0.0")) {
                     tv.setText("");
                 }
 
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(Double.parseDouble(tv.getText().toString())==0.0) {
+                if(tv.getText().toString().equals("0.0")) {
                     tv.setText("");
                 }
 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(Double.parseDouble(tv.getText().toString())==0.0) {
+                if(tv.getText().toString().equals("0.0")) {
                     tv.setText("");
                 }
 
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(Double.parseDouble(tv.getText().toString())==0.0) {
+                if(tv.getText().toString().equals("0.0")) {
                     tv.setText("");
                 }
 
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(Double.parseDouble(tv.getText().toString())==0.0) {
+                if(tv.getText().toString().equals("0.0")) {
                     tv.setText("");
                 }
 
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(Double.parseDouble(tv.getText().toString())==0.0) {
+                if(tv.getText().toString().equals("0.0")) {
                     tv.setText("");
                 }
 
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(Double.parseDouble(tv.getText().toString())==0.0) {
+                if(tv.getText().toString().equals("0.0")) {
                     tv.setText("");
                 }
 
@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(Double.parseDouble(tv.getText().toString())==0.0) {
+                if(tv.getText().toString().equals("0.0")) {
                     tv.setText("");
                 }
 
