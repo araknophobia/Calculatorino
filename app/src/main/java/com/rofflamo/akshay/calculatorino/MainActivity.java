@@ -21,9 +21,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final TextView tv = (TextView)findViewById(R.id.textView);
-
-
-
         final Button button0 = (Button)findViewById(R.id.button0);
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastop=="=") {
-                    tv.setText("0");
+                    tv.setText("0.0");
                     result=0.0;
                     lastop = null;
                 }
@@ -65,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastop=="=") {
-                    tv.setText("0");
+                    tv.setText("0.0");
                     result=0.0;
                     lastop = null;
                 }
@@ -83,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastop=="=") {
-                    tv.setText("0");
+                    tv.setText("0.0");
                     result=0.0;
                     lastop = null;
                 }
@@ -101,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastop=="=") {
-                    tv.setText("0");
+                    tv.setText("0.0");
                     result=0.0;
                     lastop = null;
                 }
@@ -119,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastop=="=") {
-                    tv.setText("0");
+                    tv.setText("0.0");
                     result=0.0;
                     lastop = null;
                 }
@@ -137,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastop=="=") {
-                    tv.setText("0");
+                    tv.setText("0.0");
                     result=0.0;
                     lastop = null;
                 }
@@ -157,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastop=="=") {
-                    tv.setText("0");
+                    tv.setText("0.0");
                     result=0.0;
                     lastop = null;
                 }
@@ -176,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastop=="=") {
-                    tv.setText("0");
+                    tv.setText("0.0");
                     result=0.0;
                     lastop = null;
                 }
@@ -195,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastop=="=") {
-                    tv.setText("0");
+                    tv.setText("0.0");
                     result=0.0;
                     lastop = null;
                 }
@@ -264,8 +261,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if(lastpress=="num") {
 
-                    Toast t2 = Toast.makeText(getApplicationContext(), "Minus", Toast.LENGTH_SHORT);
-                    t2.show();
                     if (lastop == null || lastop == "+") {
                         result = result + Double.parseDouble(tv.getText().toString());
                         lastop = "-";
@@ -378,7 +373,9 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                if(!tv.getText().toString().contains(".")){
+                if(tv.getText().toString().equals("0.0"))
+                    tv.setText("0.");
+                else if(!tv.getText().toString().contains(".")){
                     tv.append(".");
                 }
                 lastpress="num";
