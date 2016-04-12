@@ -378,9 +378,7 @@ public class MainActivity extends AppCompatActivity {
                     result=0.0;
                     lastop = null;
                 }
-                String s = new String(tv.getText().toString());
-                CharSequence c = ".";
-                if(!s.contains(c)){
+                if(!tv.getText().toString().contains(".")){
                     tv.append(".");
                 }
                 lastpress="num";
